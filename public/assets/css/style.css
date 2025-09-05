@@ -1,0 +1,22 @@
+
+*{box-sizing:border-box;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial}
+body{margin:0;background:#f6f7fb;color:#111}
+.container{max-width:980px;margin:2rem auto;padding:0 1rem}
+.nav{display:flex;gap:1rem;align-items:center;padding:1rem;background:#fff;border-bottom:1px solid #e6e6e6}
+.nav .brand{font-weight:700;margin-right:auto;text-decoration:none;color:#111}
+.nav a{color:#111;text-decoration:none}
+.nav .link{border:none;background:none;color:#0070f3;cursor:pointer}
+.alert{padding:.75rem 1rem;margin:1rem 0;border-radius:.5rem}
+.alert.error{background:#ffe5e5;border:1px solid #ffb3b3}
+.alert.success{background:#e6ffed;border:1px solid #b2f5bf}
+h1,h2,h3{margin:.5rem 0 1rem}
+form label{display:block;margin:.5rem 0}
+input,textarea,select{width:100%;padding:.6rem;border:1px solid #ccc;border-radius:.5rem;background:#fff}
+.btn{display:inline-block;padding:.6rem 1rem;border-radius:.5rem;background:#111;color:#fff;text-decoration:none;border:none;cursor:pointer}
+.btn.small{padding:.3rem .6rem;font-size:.9rem}
+.btn.alt{background:#666}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem}
+.card{background:#fff;border:1px solid #eee;border-radius:.75rem;padding:1rem}
+.footer{padding:2rem;text-align:center;color:#666}
+.chat-box{height:300px;overflow:auto;background:#fff;border:1px solid #eee;border-radius:.5rem;padding:.5rem;margin-bottom:.5rem}
+.msg{padding:.25rem .5rem}
