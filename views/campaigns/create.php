@@ -5,7 +5,7 @@
         <h1 class="text-3xl font-bold text-gray-800 mb-8">Create a New Campaign</h1>
 
         <div class="bg-white p-8 shadow sm:rounded-lg">
-            <form class="space-y-6" action="/campaigns/create" method="POST">
+            <form class="space-y-6" action="<?= base_url('campaigns/create') ?>" method="POST">
                 <input type="hidden" name="csrf" value="<?= htmlspecialchars(csrf_token()) ?>">
 
                 <div>

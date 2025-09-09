@@ -7,7 +7,7 @@
         </h2>
         <p class="mt-2 text-center text-sm text-gray-600">
             Or
-            <a href="/register" class="font-medium text-purple-600 hover:text-purple-500">
+            <a href="<?= base_url('auth/register') ?>" class="font-medium text-purple-600 hover:text-purple-500">
                 create a new account
             </a>
         </p>
@@ -15,7 +15,7 @@
 
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-            <form class="space-y-6" action="/login" method="POST">
+            <form class="space-y-6" action="<?= base_url('auth/login') ?>" method="POST">
                 <input type="hidden" name="csrf" value="<?= htmlspecialchars(csrf_token()) ?>">
                 <div>
                     <label for="email" class="block text-sm font-medium text-gray-700">

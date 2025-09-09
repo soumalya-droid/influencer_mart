@@ -4,7 +4,7 @@
     <div class="flex justify-between items-center mb-8">
         <h1 class="text-3xl font-bold text-gray-800">Browse Campaigns</h1>
         <?php if (auth_user() && auth_user()['role'] === 'company'): ?>
-            <a href="/campaigns/create" class="btn btn-primary">Create Campaign</a>
+            <a href="<?= base_url('campaigns/create') ?>" class="btn btn-primary">Create Campaign</a>
         <?php endif; ?>
     </div>
 
@@ -32,7 +32,7 @@
                         <p class="text-gray-500 mb-4">By: <span class="font-semibold text-gray-700"><?= htmlspecialchars($c['company_name']) ?></span></p>
                         <p class="text-gray-500">Budget: <span class="font-semibold text-green-600">$<?= number_format($c['budget'], 2) ?></span></p>
                     </div>
-                    <a href="/campaigns/show?id=<?= (int)$c['id'] ?>" class="btn btn-primary mt-6 self-start">View Campaign</a>
+                    <a href="<?= base_url('campaigns/show?id=' . (int)$c['id']) ?>" class="btn btn-primary mt-6 self-start">View Campaign</a>
                 </div>
             <?php endforeach; ?>
         </div>

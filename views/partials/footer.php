@@ -110,7 +110,7 @@
         /**
          * Populates the database with initial campaign data if the collection is empty.
          */
-        const initializeFirestore = async (). => {
+        const initializeFirestore = async () => {
             try {
                 const campaignsSnapshot = await getDocs(collection(db, campaignsCollectionPath));
                 if (campaignsSnapshot.empty) {

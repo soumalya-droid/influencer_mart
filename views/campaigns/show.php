@@ -28,7 +28,7 @@
             <!-- Bid Submission Form -->
             <div class="bg-white shadow sm:rounded-lg p-8 mb-8">
                 <h2 class="text-2xl font-bold text-gray-800 mb-6">Submit Your Bid</h2>
-                <form method="post" action="/bids/submit" class="space-y-6">
+                <form method="post" action="<?= base_url('bids/submit') ?>" class="space-y-6">
                     <input type="hidden" name="csrf" value="<?= htmlspecialchars(csrf_token()) ?>">
                     <input type="hidden" name="campaign_id" value="<?= (int)$c['id'] ?>">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -67,18 +67,18 @@
                             </div>
                             <div class="flex items-center space-x-2">
                                 <?php if ($u && $u['role'] === 'company' && (int)$u['id'] === (int)$c['company_id'] && $b['status'] === 'pending'): ?>
-                                    <form method="post" action="/bids/approve" class="inline">
+                                    <form method="post" action="<?= base_url('bids/approve') ?>" class="inline">
                                         <input type="hidden" name="csrf" value="<?= htmlspecialchars(csrf_token()) ?>">
                                         <input type="hidden" name="bid_id" value="<?= (int)$b['id'] ?>">
                                         <button type="submit" class="btn btn-primary text-xs">Approve</button>
                                     </form>
-                                    <form method="post" action="/bids/reject" class="inline">
+                                    <form method="post" action="<?= base_url('bids/reject') ?>" class="inline">
                                         <input type="hidden" name="csrf" value="<?= htmlspecialchars(csrf_token()) ?>">
                                         <input type="hidden" name="bid_id" value="<?= (int)$b['id'] ?>">
                                         <button type="submit" class="btn btn-outline-primary text-xs bg-red-500 text-white border-red-500 hover:bg-red-600">Reject</button>
                                     </form>
                                 <?php endif; ?>
-                                <a href="/chat?with=<?= (int)($u['role'] === 'company' ? $b['influencer_id'] : $c['company_id']) ?>&campaign_id=<?= (int)$c['id'] ?>" class="btn btn-outline-primary text-xs">Chat</a>
+                                <a href="<?= base_url('chat?with=' . (int)($u['role'] === 'company' ? $b['influencer_id'] : $c['company_id']) . '&campaign_id=' . (int)$c['id']) ?>" class="btn btn-outline-primary text-xs">Chat</a>
                             </div>
                         </li>
                     <?php endforeach; ?>

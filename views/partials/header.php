@@ -218,25 +218,25 @@
     <!-- Header -->
     <header class="bg-white/80 backdrop-blur-lg shadow-md sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" class="text-2xl font-bold text-gray-800">
+            <a href="<?= base_url() ?>" class="text-2xl font-bold text-gray-800">
                 <span class="text-purple-700">In</span>fluence
             </a>
             <div class="hidden lg:flex items-center space-x-8">
-                <a href="/" class="text-gray-600 hover:text-purple-700 font-medium">Home</a>
-                <a href="/#campaigns" class="text-gray-600 hover:text-purple-700 font-medium">Campaigns</a>
-                <a href="/#influencers" class="text-gray-600 hover:text-purple-700 font-medium">Influencers</a>
-                <a href="/#testimonials" class="text-gray-600 hover:text-purple-700 font-medium">Testimonials</a>
+                <a href="<?= base_url() ?>" class="text-gray-600 hover:text-purple-700 font-medium">Home</a>
+                <a href="<?= base_url('#campaigns') ?>" class="text-gray-600 hover:text-purple-700 font-medium">Campaigns</a>
+                <a href="<?= base_url('#influencers') ?>" class="text-gray-600 hover:text-purple-700 font-medium">Influencers</a>
+                <a href="<?= base_url('#testimonials') ?>" class="text-gray-600 hover:text-purple-700 font-medium">Testimonials</a>
                 <a href="#" class="text-gray-600 hover:text-purple-700 font-medium">Contact</a>
             </div>
             <div class="hidden lg:flex items-center space-x-4">
                 <?php if (auth_user()): ?>
-                    <a href="/dashboard" class="text-gray-600 hover:text-purple-700 font-medium">Dashboard</a>
-                    <form action="/logout" method="post" class="inline">
+                    <a href="<?= base_url('dashboard') ?>" class="text-gray-600 hover:text-purple-700 font-medium">Dashboard</a>
+                    <form action="<?= base_url('logout') ?>" method="post" class="inline">
                         <button type="submit" class="text-gray-600 hover:text-purple-700 font-medium">Logout</button>
                     </form>
                 <?php else: ?>
-                    <a href="/login" class="text-gray-600 hover:text-purple-700 font-medium">Login</a>
-                    <a href="/register" class="btn btn-primary shadow-lg">Sign Up</a>
+                    <a href="<?= base_url('auth/login') ?>" class="text-gray-600 hover:text-purple-700 font-medium">Login</a>
+                    <a href="<?= base_url('auth/register') ?>" class="btn btn-primary shadow-lg">Sign Up</a>
                 <?php endif; ?>
             </div>
             <button class="lg:hidden flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-800 hover:border-gray-800">
